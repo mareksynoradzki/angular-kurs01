@@ -1,0 +1,18 @@
+<label> Obserwuj
+    <input type="checkbox" #ch (change)="watch(ch.checked)">
+</label>
+
+<label>
+    Transofrmuj
+    <input 
+        type="checkbox" 
+        #ch2 
+        (change)="transform(ch2.checked)" 
+        [disabled]="!ch.checked"
+    >
+</label>
+<div class="ui relaxed divided list">
+    <div *ngFor="let value of valueList" class="item">
+        <div class="content">{{value}}</div>
+    </div>
+</div>

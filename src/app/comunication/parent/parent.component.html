@@ -1,0 +1,14 @@
+<h3 class="ui header">Rodzic</h3>
+
+<div class="ui right labeled left icon input">
+    <i class="handshake icon"></i>
+    <input #inp (keyup)="setValue(inp.value)">
+    <label class="ui tag label">Wprowadź wartość</label>
+</div>
+
+<pre><code class="code">
+    Wartośc w rodzicu {{parentValue}}
+Wartośc w dziecku odtycznata w rodzicu: 
+</code></pre>
+
+<cm-child (newValue)="onChangeChildValue($event)" [childValue]="parentValue"></cm-child>

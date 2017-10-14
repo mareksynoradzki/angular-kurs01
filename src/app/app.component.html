@@ -1,0 +1,25 @@
+<div class="ui container">
+    <header>
+        <h1 class="ui center aligned icon header">
+            <i class="settings icon"></i>
+            <div class="content">
+                Aplikacja Angular
+                <div class="sub header">
+                    Wersja 2/4/5
+                </div>
+            </div>
+        </h1>
+    </header>
+    
+    <div class="ui pointing menu">
+        <a routerLinkActive="active" class="item" routerLink="home">Start</a>
+        <a class="item">Wyświetlanie danych</a>
+        <a class="item">Manipulacja DOM</a>
+        <a class="item">Komunikacja</a>
+        <a class="item">Formularze</a>
+        <a routerLinkActive="active" class="item" routerLink="user">Panel użytkownika</a>
+    </div>
+    <div class="ui segment">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<h3 class="ui header">Szablony</h3>
+<form #form="ngForm">
+    <input required [(ngModel)]="fname" name="fname">
+    <input required name="lname" ngModel>
+</form>
+
+<p class="ui message">{{fname}}</p>
+<pre>
+    {{form.value |json}}
+
+FormControl: {{fname.value}}
+FormControl: {{form.controls['lname']?.value}}
+FormGroup {{form.value|json}}
+
+Stany:
+    valid:      {{form.valid}}
+    invalid:    {{form.invalid}}
+    pristine:   {{form.pristine}}
+    dirty:      {{form.dirty}}
+    touched:    {{form.touched}} 
+    untouched:  {{form.untouched}} 
+</pre>
+<br>

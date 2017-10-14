@@ -1,0 +1,16 @@
+<h2 class="ui header">Panel uzytkownika</h2>
+
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical fluid tabular menu">
+            <a routerLink="list" routerLinkActive="active" class="item">Lista użytkowników</a>
+            <a routerLink="add" routerLinkActive="active" class="item">Dodaj użytkownika</a>
+        </div>
+    </div>
+    <div class="twelve wide column">
+        <div class="ui segment">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

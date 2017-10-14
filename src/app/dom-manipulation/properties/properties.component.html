@@ -1,0 +1,31 @@
+<h3 class="ui header">Właściwości</h3>
+
+<div class="ui labeled">
+    <label>Włącz</label>
+    <input #checkbox type="checkbox" name="test" (click)="changeDisabled()">
+</div>
+<div class="ui labeled input">
+    <label class="ui label">Pole:</label>
+    <input [disabled]="checkbox.checked">
+</div>
+
+<div class="row" [style.fontSize.pt]="size" (click)="incSize()">
+    <i class="comment icon"></i>
+    <p>Tekst</p>
+</div>
+
+<div class="row" [style.backgroundColor]= "color">
+    <input type="color" #inp (change)="setColor(inp.value)">
+</div>
+<div class="row">
+    <p [ngStyle]="{fontSize: '1.2rem'}">Test</p>
+</div>
+
+<div class="row">
+    <p 
+        class="ui message" 
+        [ngClass]="{positive: disabled, error:!disabled}" 
+        (click)="changeDisabled()">
+        Wiadomość</p>
+
+</div>

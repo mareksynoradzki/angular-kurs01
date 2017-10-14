@@ -1,0 +1,45 @@
+<h3 class="ui header">Struktura</h3>
+<button class="ui button" (click)="changeVisible()">Zmień</button>
+<p *ngIf="visible else elseElement" class="ui positive message">Jestem</p>
+
+<ng-template #elseElement>
+    <p class="ui error message"><del>Nie ma mnie</del></p>
+</ng-template>
+
+<button class="ui button" (click)="nextPage()">Następny</button>
+<ul [ngSwitch]="page" class="ui segments">
+    <li *ngSwitchCase="1" class="ui segment">Pierwsza</li>
+    <li *ngSwitchCase="2" class="ui segment">Druga</li>
+    <li *ngSwitchCase="3" class="ui segment">Trzecia</li>
+    <li *ngSwitchCase="4" class="ui segment">Czwarta</li>
+    <li *ngSwitchCase="5" class="ui segment">Piąta</li>
+    <li *ngSwitchCase="6" class="ui segment">Szósta</li>
+    <li *ngSwitchDefault class="ui segment">Inna</li>
+</ul>
+
+<div class="row">
+    <div class="ui labeled input">
+        <label class="ui label">Nowa wartość:</label>
+        <input #inp (keyup.enter)="addItem(inp.value);inp.value=''">
+    </div>
+    <table class="ui selectable celled striped table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Wartość</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let item of itemList;index as i">
+                <td>
+                    <div class="ui ribbon label">
+                        {{i}}    
+                    </div>
+                </td>
+                <td>{{item}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

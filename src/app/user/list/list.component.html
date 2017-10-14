@@ -1,0 +1,21 @@
+<h3 class="ui dividing header">Lista użytkowników</h3>
+<table class="ui celled striped selectable table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nickname</th>
+            <th>Email</th>
+            <th>Hasło</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" (click)="edit(user.id)">
+            <td>{{user.id}}</td>
+            <td>{{user.nickname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+    </tbody>
+</table>
+    
+    

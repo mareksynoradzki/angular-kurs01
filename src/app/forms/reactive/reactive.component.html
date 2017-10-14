@@ -1,0 +1,27 @@
+<h3 class="ui header">Formularze reaktywne</h3>
+<form class="ui form" [formGroup]="form" (submit)="submit()">
+    <h3 class="ui divided header">Dane użytkownika</h3>
+    <div class="field required">
+        <label for="nickname">Nickname</label>
+        <input [formControl]="nickname" placeholder="Wprowadź nazwę" name="nickname" id="nickname">
+    </div>
+    <div [ngClass]="{error: email.invalid && email.touched}" class="field required">
+        <label for="email">Email</label>
+        <input [formControl]="email" placeholder="Wprowadź adres" name="email" id="email">
+    </div>
+    <div class="field required">
+        <label for="password">Hasło:</label>
+        <input [formControl]="password" placeholder="Wprowadź haslo" name="password" id="password">
+    </div>
+    <div class="field">
+        <button class="ui button primary" [disabled]="form.invalid">
+            <i class="add user icon"></i>
+            Wyślij</button>
+        <button type="button" class="ui button secondary" [disabled]="form.pristine" onClick="form.reset()">
+            <i class="undo icon"></i>Resetuj</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
+<br>

@@ -1,0 +1,11 @@
+<h3 class="ui header">Dziecko</h3>
+
+<div class="ui right labeled left icon input">
+    <i class="handshake icon"></i>
+    <input #inp (keyup)="setValue(inp.value)">
+    <label class="ui tag label" (click)="emitNewValue()">Poinformuj rodzica o zmianie</label>
+</div>
+
+<pre><code class="code">
+    Wartośc w rodzicu {{childValue}}
+</code></pre>
